@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // Display a custom popup using SweetAlert with a timer
         Swal.fire({
             title: 'Verified!',
-            text: 'Your form has been successfully submitted.',
             icon: 'success',
             showCancelButton: false,
             confirmButtonText: 'OK',

@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 // Endpoint to serve the HTML form
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 // Endpoint to handle form submission
@@ -54,6 +54,11 @@ app.post("/submit-form", (req, res) => {
       res.json({ success: true, message: "Form submitted successfully" });
     }
   });
+});
+
+// Error event listener
+app.on("error", (err) => {
+  console.error("Unhandled error occurred:", err);
 });
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

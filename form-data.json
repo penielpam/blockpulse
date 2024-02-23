@@ -170,5 +170,77 @@
       "author": "1",
       "post_id": "20"
     }
+  },
+  {
+    "custom": {
+      "fields": [
+        "broski"
+      ],
+      "id": "442",
+      "author": "1",
+      "post_id": "20"
+    }
+  },
+  {
+    "custom": {
+      "fields": [
+        null,
+        null,
+        null,
+        null,
+        "broski"
+      ],
+      "id": "442",
+      "author": "1",
+      "post_id": "20"
+    }
+  },
+  {
+    "custom": {
+      "fields": [
+        "integer"
+      ],
+      "id": "442",
+      "author": "1",
+      "post_id": "20"
+    }
+  },
+  {
+    "custom": {
+      "fields": [
+        null,
+        null,
+        null,
+        null,
+        "integer"
+      ],
+      "id": "442",
+      "author": "1",
+      "post_id": "20"
+    }
+  },
+  {
+    "custom": {
+      "fields": [
+        "mining"
+      ],
+      "id": "442",
+      "author": "1",
+      "post_id": "20"
+    }
+  },
+  {
+    "custom": {
+      "fields": [
+        null,
+        null,
+        null,
+        null,
+        "mining"
+      ],
+      "id": "442",
+      "author": "1",
+      "post_id": "20"
+    }
   }
 ]
