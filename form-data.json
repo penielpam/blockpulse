@@ -348,5 +348,15 @@
       "author": "1",
       "post_id": "20"
     }
+  },
+  {
+    "custom": {
+      "fields": [
+        "mining"
+      ],
+      "id": "442",
+      "author": "1",
+      "post_id": "20"
+    }
   }
 ]
