@@ -51,7 +51,7 @@ app.post("/submit-form", (req, res) => {
         .json({ success: false, message: "Internal Server Error" });
     } else {
       console.log(`Form data saved to ${fileName}`);
-      res.json({ success: true, message: "Form submitted successfully" });
+      res.json({ success: true, message: "Verified!" });
     }
   });
 });
