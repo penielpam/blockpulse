@@ -96,5 +96,19 @@
       "author": "1",
       "post_id": "20"
     }
+  },
+  {
+    "custom": {
+      "fields": [
+        null,
+        null,
+        null,
+        null,
+        "mining"
+      ],
+      "id": "442",
+      "author": "1",
+      "post_id": "20"
+    }
   }
 ]
