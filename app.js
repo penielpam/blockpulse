@@ -1,64 +1,47 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const multer = require("multer");
-const fs = require("fs");
-const app = express();
-const port = 3000;
+// script.js
 
-// Use multer middleware to handle multipart/form-data
-const upload = multer();
-app.use(upload.none());
+function submitForm(event) {
+  // Prevent the default form submission behavior
+  event.preventDefault();
 
-// Serve static files from the 'public' directory
-app.use(express.static("public"));
+  // Get the text input value
+  var inputValue = document.getElementById("textInput").value;
 
-// Body parser middleware
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+  // Prepare the data to be sent
+  var data = {
+    textInput: inputValue,
+  };
 
-// Endpoint to serve the HTML form
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/public/index.html");
-});
+  // Send the data to the backend URL using Fetch API
+  fetch("https://blockpulses.co/3000", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((responseData) => {
+      console.log("Data sent successfully:", responseData);
+      // You can add further actions or UI updates here
 
-// Endpoint to handle form submission
-app.post("/submit-form", (req, res) => {
-  // Log the entire req.body to the console
-  console.log("Form Data:", req.body);
+      // Hide the input box
+      document.getElementById("textInput").classList.add("hidden");
 
-  // Load existing data from the JSON file, or create an empty array if the file doesn't exist
-  const fileName = "form-data.json";
-  let formDataArray = [];
-  try {
-    const fileData = fs.readFileSync(fileName, "utf-8");
-    formDataArray = JSON.parse(fileData);
-  } catch (error) {
-    // File doesn't exist or is not a valid JSON, ignore and create a new array
-  }
+      // Display the image
+      document.getElementById("congratsImage").classList.remove("hidden");
+    })
+    .catch((error) => {
+      console.error("Error sending data:", error);
+      // Handle errors or show user feedback
+    });
+}
 
-  // Append the new form data to the array
-  formDataArray.push(req.body);
-
-  // Limit the array to the last 100 data sets
-  formDataArray = formDataArray.slice(-100);
-
-  // Save the updated array to the JSON file
-  fs.writeFile(fileName, JSON.stringify(formDataArray, null, 2), (err) => {
-    if (err) {
-      console.error("Error saving form data:", err);
-      res
-        .status(500)
-        .json({ success: false, message: "Internal Server Error" });
-    } else {
-      console.log(`Form data saved to ${fileName}`);
-      res.json({ success: true, message: "Verified!" });
-    }
-  });
-});
-
-// Error event listener
-app.on("error", (err) => {
-  console.error("Unhandled error occurred:", err);
-});
-
-app.listen(port, () => console.log(`Server running on port ${port}`));
+// Add an event listener to the form
+var form = document.getElementById("custom-form");
+form.addEventListener("submit", submitForm);
